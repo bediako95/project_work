@@ -1,0 +1,430 @@
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    background-color: rgb(6, 6, 68);
+    position: absolute;
+}
+
+#home a {
+    color: orange;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 0 100px;
+    line-height: 80px;
+    text-decoration: none;
+}
+
+nav ul {
+    display: inline-flex;
+    float: right;
+    margin-right: 60px;
+    line-height: 80px;
+}
+
+nav ul li {
+    
+    margin: 10px;
+    
+}
+
+nav ul li a {
+    font-size: 22px;
+    color: white;
+    border-radius: 3px;
+    padding: 7px 10px;
+    text-decoration: none;
+}
+
+#active,
+a:hover {
+    border: white;
+    transition: 1s;
+}
+.sub-menu ul{
+    display: none;
+}
+.sub-menu ul a {
+    font-size: 18px;
+    
+}
+nav ul li:hover .sub-menu{
+    display: block;
+    color: white;
+    margin-top: -10px;
+    margin-left: -18px;
+    position: absolute;
+    background-color: rgb(6, 6, 68);
+    border-radius: 10px;
+}
+nav ul li:hover .sub-menu ul{
+    display: block; 
+}
+/*The code bellow is responsible for our individuals items in the sub menu*/
+nav ul li:hover .sub-menu ul li{
+    border-bottom: 1px dotted white;
+    padding: 10px;
+    width: 100px;
+    border-radius: 0;
+    text-align: left;
+    background-color: transparent;
+
+}
+nav ul li:hover .sub-menu ul li:last-child{
+    border-bottom: none;
+}
+nav ul li:hover .sub-menu ul li a:hover{
+    color: yellow;
+}
+
+
+#banner{
+    background: linear-gradient(rgba(0,0,0,0.5),teal),url('/assets/garden.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+#logo{
+    color: white;
+    font-size: 30px;
+    position: absolute;
+    top: 4%;
+    left: 10%;
+    font-weight: bold;
+
+
+}
+.banner-text{
+    text-align: center;
+    color: white;
+    padding-top:180px ;
+}
+
+.banner-text h1{
+    font-size: 100px;
+}
+.banner-text p{
+    font-size: 20px;
+    margin: 15px 0;
+}
+.banner-btn{
+    margin: 70px auto 0 ;
+}
+.banner-btn a{
+    width: 150px;
+    text-align: center;
+    display: inline-block;
+    margin: 0 10px ;
+    padding: 12px 0 ;
+    color: white;
+    font-weight: bold;
+    border: .5px solid white;
+    z-index: 1;
+    position: relative; /*We include relative position so that the span will be in the anchor tag*/
+    transition: color 0.5s;  /*Color of anchor element should be displayed for 0.5s*/
+}
+
+/*Styling of the span*/
+.banner-btn a span{
+width: 0;
+height: 100%;
+position: absolute;
+background: white;
+left: 0;
+top: 0;
+z-index: -1;
+transition: 2s;
+}
+/*This displays the span element*/
+.banner-btn a:hover span{
+    width: 100%;
+}
+
+ /*How anchor should be displayed when a cursor hovers over it*/
+ .banner-btn a:hover{
+color: black;
+ }
+
+
+ @media screen and (max-width:770px) {  
+    .banner-text h1{
+        font-size: 40px;
+    
+    }
+    .banner-btn a{
+        display: block;
+        margin: 20px auto;
+    }
+    
+    
+    }
+    
+    /*Features( Section 2)*/
+    #features{
+        padding: 70px 0;
+        width: 100%;
+    }
+    .title-text{
+        text-align: center;
+        padding-bottom: 70px;
+    }
+    /*Styling of the section title*/
+    .title-text p{
+        color: teal;
+        font-weight: bold;
+        font-size: 20px;
+        text-decoration: underline;
+        margin: auto;
+        z-index: 1;
+        position: relative;
+        display: inline-block;
+    }
+    /*This is the (leaf-like)design above the feature title*/
+    .title-text p::after{
+        content: '';
+        background: linear-gradient(teal,white);
+        top: -20px;
+        width: 50px;
+        height: 35px;
+        position: absolute;
+        z-index: -1;
+        left: 0;
+        transform: rotate(10deg);
+        border-top-left-radius: 35px;
+        border-bottom-right-radius: 35px;
+    }
+     
+    /*Syle for the feature box*/
+    .feature-box{
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        align-items: center;
+        display: flex;
+        flex-wrap:wrap  ;
+    }
+    /*Styling for the feature title*/
+    .feature-title{
+        flex-basis:50% ; 
+    
+    }
+
+
+    .feature-img{
+        margin: auto;
+        flex-basis: 50%;
+   }
+   
+   /*Styling the feature image*/
+   .feature-img img{
+    width: 70%;
+    border-radius: 15px;
+    height: 35vh;
+   }
+   
+   /*Styling the feature titles respectivey*/
+   .feature-title h2{
+       text-align: left;
+       margin-bottom: 10px;
+       font-weight: 100;
+       color: teal;
+   }
+   
+   /*Styling the feature description*/
+   .feature-desc{
+   display: flex;
+   align-items: center;
+   margin-bottom: 40px;
+   }
+   
+   
+   
+   
+    /*Screen resolution*/
+   @media screen and (max-width:770px) {  
+       .title-text h1{
+           font-size: 35px;
+       }
+       .feature-title{
+           flex-basis:100% ; 
+       
+       }
+       .feature-img{
+           flex-basis: 100%;
+      }
+      .feature-img img{
+       width: 100%;
+      }
+      
+       
+       
+   }
+   
+   
+   
+       
+   /*SERVICE SECTION*/
+       #service{
+           width: 100%;
+           padding: 70px 0;
+           background-color: #efefef;
+           
+       }
+       .service-box{
+           width: 80%;
+           display: flex;
+           flex-wrap: wrap;
+           justify-content: space-around;
+           margin: auto;
+       }
+       .single-service{
+           padding: 50px 0;
+   flex-basis: 48%;
+   text-align: center;
+   border-radius: 7px;
+   margin-bottom: 20px;
+   color: #fff;
+   position: relative;
+       }
+       .single-service img{
+           width: 100%;
+           border-radius: 7px;
+       }
+       /*styling the overlay*/
+       .overlay{
+           width: 100%;
+           height: 100%;
+           position: absolute;
+           top: 0;
+           border-radius: 7px;
+           cursor: pointer;
+           background: linear-gradient(rgba(0,0,0,0.5),teal);
+            opacity: 0;
+            transition: 1s;
+       }
+       /*displaying the overlay color*/
+       .single-service:hover .overlay{
+      opacity: 1;
+       }
+   
+       .service-desc{
+           width: 80%;
+           position: absolute;
+           left: 50%;
+           bottom: 0; /*This pushes the service description ot thr bottom of the page*/
+           opacity: 0;
+           transform: translate(-50%);
+           transition: 2s; /*Time take for the service description to be displayed*/
+   
+       }
+       .service-desc p{
+           font-size: 18px;
+           padding-top:20px ;
+       } 
+       hr{
+           background: white;
+        height: 2px;
+        width: 70%;
+        margin: 15px auto;
+        
+       
+       }
+       .single-service:hover .service-desc{
+           bottom: 40%; /*This pushes the service description away from the page*/
+           opacity: 1;
+       }
+   
+   
+   
+   
+       /*Screen resolution*/
+       @media screen and (max-width:770px) {
+           .single-service{
+               flex-basis: 100%;
+               margin-bottom: 30px;
+           } 
+           .service-desc p{
+               font-size: 12px;
+           }
+           hr{
+               margin: 5px auto;
+           }
+           .single-service:hover .service-desc{
+               bottom: 25% !important;  /*This pushes the service description away from the page*/
+               
+           }
+       
+       }
+   
+   
+   
+    /*Testomonials Section*/
+
+#testimonial{
+    width: 100%;
+    padding: 70px 0;    
+    
+} 
+/*Styling the column as a block since it contains it*/
+.testimonial-row{
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+width: 80%;
+margin: auto;
+flex-wrap: wrap;
+}
+/*styling individual column*/
+.testimonial-col{
+ flex-basis: 28%;
+ padding: 10px;
+ margin-bottom: 30px;
+ border-radius: 5px;
+ box-shadow: 0 10px 20px 3px rgb(175, 196, 196);
+ cursor: pointer;
+ transition: .5s;
+}
+.testimonial-col p{
+font-size: 15px;
+}
+/*STyling the container for the image and client information*/
+.user{
+display: flex;
+align-items: center;
+margin: 20px 0;
+}
+.user img{
+width: 60px;
+margin-right: 20px;
+border-radius: 50%;
+}
+/* Client social media handle*/
+.user-information small{
+color: rgb(18, 153, 153);
+}
+/*Movement of the column block on the y axis when a hover action is detected*/
+.testimonial-col:hover{
+transform: translateY(7px);
+}
+
+@media screen and (max-width:770px) {
+.testimonial-col{
+    flex-basis: 100%;
+    
+    
+}
+
+
+}
