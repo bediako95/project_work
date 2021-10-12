@@ -19,7 +19,13 @@
   <body>
   <!-----header file included here-->
   <%=render 'post/header' %>
-  <div class="container"><br/><%= yield %></div>
+  
+  <div class="container">
+  
+  <%= yield %>
+  </div>
+  <br>
+  <%=render 'post/footer'%>
         
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -1,1 +1,20 @@
-<h1>Hello sample <%@sample%></h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<%=link_to 'Customers',root_path, class:'navbar-brand'%>
+
+</nav>
+
+
+<div class="collapse navbar-collapse" di="navbarSupportedContent">
+<ul class="navbar-nav mr-auto">
+
+<li class="nav-item">
+<%=link_to'Customers', customers_path, class:'nav-link'%>
+</li>
+<li class="nav-item">
+<%=link_to'Add Customer', new_customer_path, class:'nav-link'%>
+</li>
+
+
+</ul>
+
+</div>

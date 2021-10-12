@@ -1,0 +1,47 @@
+
+<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+<h2 class="display-4" style="text-decoration:underline">
+<strong><%='Customer Information'%></strong>
+</h2> 
+  <h3 class="display-4">
+  <%= @customer.first_name %>
+   <%= @customer.last_name %>
+
+  </h3>
+  <p class="lead">
+  <%= @customer.email %><br>
+   <%= @customer.residential_address %><br>
+    <%= @customer.phone %>
+  
+  </p>
+  <hr class="my-4">
+ 
+  <p class="lead">
+    
+<%= link_to 'Edit', edit_customer_path(@customer), class:'btn btn-warning' %> 
+<%= link_to 'Back', customers_path, class:'btn btn-primary' %>
+
+  </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
