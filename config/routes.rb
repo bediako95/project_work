@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users_authentications
   resources :customers
   get 'post/sample'
+  get 'post/about'
   root 'post#index'
 
   # match ':controller/:action/:id', via: :get

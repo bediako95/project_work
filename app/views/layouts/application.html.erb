@@ -21,6 +21,11 @@
   <%=render 'post/header' %>
   
   <div class="container">
+  <!--If there is a notice display alert dialog here else don't-->
+  <% if notice%>
+  <%=render 'layouts/alert'%>
+<%end%>
+
   
   <%= yield %>
   </div>

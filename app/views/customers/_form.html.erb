@@ -35,7 +35,12 @@
     <%= form.label :phone %>
     <%= form.text_field :phone,class:'form-control' %>
   </div>
-
+    <div class="field form-group">
+    
+    <%= form.number_field :user_id,id: :customer_user_id, class:'form-control',value: current_users_authentication.id ,type: :"hidden"%>
+  </div>
+  
+<br>
   <div class="actions">
     <%= form.submit class:"btn btn-warning"%>
   </div>
