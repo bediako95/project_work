@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<br>
+<h1>Feedbacks of Customers</h1>
+<br>
+<table>
+  <thead>
+    <tr>
+     <th>Customer's Name</th>
+      <th>Customer's Phone number</th>
+      <th>Name of Gardener</th>
+      <th>Rating</th>
+      <th>Additional Comments</th>
+      
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @feedbacks.each do |feedback| %>
+      <tr>
+      <td><%= feedback.customer_name %></td>
+      <td><%= feedback.phone_number %></td>
+        <td><%= feedback.name %></td>
+        <td><%= feedback.rating %></td>
+        <td><%= feedback.addtional_comments %></td>
+        <td><%= link_to 'Show', feedback %></td>
+        <td><%= link_to 'Edit', edit_feedback_path(feedback) %></td>
+        <td><%= link_to 'Destroy', feedback, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Feedback', new_feedback_path %>

@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-      <%=link_to 'Gardening Services', root_path, class:"nav-link text-warning" %>
+      <%=link_to 'Gardeno Services', root_path, class:"nav-link text-warning" %>
         
      
       <li class="nav-item dropdown">
@@ -56,6 +56,8 @@
           <%= link_to 'Update Profile',  edit_client_registration_path , class:"dropdown-item text-warning" %>
 <div class="dropdown-divider"></div>
 <%= link_to 'Request for Service',  new_customer_url, class:"dropdown-item text-warning" %>
+<%= link_to 'Customer feedback',  new_feedback_url, class:"dropdown-item text-warning" %>
+
 
   <%else%>
  

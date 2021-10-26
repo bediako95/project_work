@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_23_215500) do
+ActiveRecord::Schema.define(version: 2021_10_26_162817) do
 
   create_table "clients", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,6 +40,16 @@ ActiveRecord::Schema.define(version: 2021_10_23_215500) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "client_id"
     t.index ["client_id"], name: "index_customers_on_client_id"
+  end
+
+  create_table "feedbacks", charset: "utf8mb4", force: :cascade do |t|
+    t.string "name"
+    t.integer "rating"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "addtional_comments"
+    t.string "customer_name"
+    t.string "phone_number"
   end
 
   create_table "gardeners", charset: "utf8mb4", force: :cascade do |t|

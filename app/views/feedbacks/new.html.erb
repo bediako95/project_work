@@ -1,0 +1,8 @@
+<%= image_tag "feedback.jpg" ,class:"feedback"%>
+<br>
+<h1>Feedback Of Service</h1>
+<p>Please enter the information below to help improve our customer's service</p>
+<br>
+<%= render 'form', feedback: @feedback %>
+<br>
+<%= link_to 'Back', feedbacks_path, class:"btn btn-primary" %>

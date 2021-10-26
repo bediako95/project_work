@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
-
-<p>
+<div class="jumbotron">
+<h2 class="display-4" style="text-decoration:underline">
+<strong><%='Gardener Information'%></strong>
+</h2> 
+  <h3 class="display-4">
+  
+  </h3>
+  <p class="lead m-2">
+  <p>
   <strong>First name:</strong>
   <%= @gardener.first_name %>
 </p>
@@ -20,5 +27,25 @@
   <%= @gardener.residential_address %>
 </p>
 
-<%= link_to 'Edit', edit_gardener_path(@gardener) %> |
-<%= link_to 'Back', gardeners_path %>
+  </p>
+  <hr class="my-4">
+ 
+  <p class="lead">
+    
+ 
+ <%if users_authentication_signed_in?%>   
+<%= link_to 'Edit', edit_gardener_path(@gardener), class:"btn btn-secondary" %>  
+<%= link_to 'Back',rails_admin_path , class:"btn btn-primary" %>
+<%else%> 
+
+<%= link_to 'Back', root_path, class:"btn btn-secondary" %>
+
+<%end%>
+
+  </p>
+</div>
+
+
+
+
+
