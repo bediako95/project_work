@@ -1,7 +1,9 @@
 class CustomersController < ApplicationController
+  # before_action :authenticate_user!
+  # before_action :authenticate_client!
   before_action :set_customer, only: %i[show edit update destroy]
   # if a user isn't authenticated then show the index and show page, but edit ot update
-  # before_action :authentication_user!, except: [:index, :show]
+  # before_action :authenticate_users_authentication!, except: %i[index show]
   # GET /customers or /customers.json
   def index
     @customers = Customer.all
@@ -50,7 +52,7 @@ class CustomersController < ApplicationController
   def destroy
     @customer.destroy
     respond_to do |format|
-      format.html { redirect_to customers_url, notice: 'Customer was successfully destroyed.' }
+      format.html { redirect_to customers_url, notice: 'Customer was successfully deleted.' }
       format.json { head :no_content }
     end
   end
@@ -64,6 +66,6 @@ class CustomersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def customer_params
-    params.require(:customer).permit(:user_id, :first_name, :last_name, :email, :residential_address, :phone)
+    params.require(:customer).permit(:first_name, :last_name, :email, :residential_address, :phone, :client_id)
   end
 end

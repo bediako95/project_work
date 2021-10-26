@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :clients
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :gardeners
   devise_for :users_authentications
   resources :customers
   get 'post/sample'

@@ -9,14 +9,10 @@
       <li class="nav-item active">
       <%=link_to 'Gardening Services', root_path, class:"nav-link text-warning" %>
         
-      </li>
-      <li class="nav-item ">
-      <%= link_to 'About us', post_about_url, class:"nav-link text-light" %>
-  
-      </li>
+     
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Account
+          Admin
         </a>
         <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
 
@@ -24,9 +20,10 @@
         <%if users_authentication_signed_in?%>   
          <%= link_to 'Signout', destroy_users_authentication_session_path, class:"dropdown-item text-warning",method: :delete %>
          <div class="dropdown-divider"></div>
-          <%= link_to 'Upadte Profile', edit_users_authentication_registration_path, class:"dropdown-item text-warning" %>
+          <%= link_to 'Update Profile', edit_users_authentication_registration_path, class:"dropdown-item text-warning" %>
 <div class="dropdown-divider"></div>
-<%= link_to 'Admin', customers_path, class:"dropdown-item text-warning" %>
+<%= link_to 'Dashboard', rails_admin_path, class:"dropdown-item text-warning" %>
+
   <%else%>
  
           <div class="dropdown-divider"></div>
@@ -40,9 +37,66 @@
      
        
           <%end%>
+
+
+
+
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Client
+        </a>
+        <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+
+
+       <%if client_signed_in?%>  
+         <%= link_to 'Signout', destroy_client_session_path, class:"dropdown-item text-warning",method: :delete %>
+         <div class="dropdown-divider"></div>
+          <%= link_to 'Update Profile',  edit_client_registration_path , class:"dropdown-item text-warning" %>
+<div class="dropdown-divider"></div>
+<%= link_to 'Request for Service',  new_customer_url, class:"dropdown-item text-warning" %>
+
+  <%else%>
+ 
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Sign Up',new_client_registration_path,class:"dropdown-item text-warning"%>
+          
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Login', new_client_session_path,class:"dropdown-item text-warning"%>
+        </div>
+      </li>
+    
+     
+       
+          <%end%>
+
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Gardener
+        </a>
+        <div class="dropdown-menu bg-dark " aria-labelledby="navbarDropdown">
+        <%= link_to 'Register', new_gardener_path,class:"dropdown-item text-warning"%>
+       
+        </div>
+      </li>
       
     
+     
+         
+      
+
+      
+     </li>
+      <li class="nav-item ">
+      <%= link_to 'Support', post_about_url, class:"nav-link text-light" %>
+  
+      </li>
     </ul>
+
+    
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>

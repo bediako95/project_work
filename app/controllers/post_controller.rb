@@ -1,9 +1,7 @@
 class PostController < ApplicationController
   def index; end
 
-  def sample
-    @samp = 'I am very happy'
-  end
+  def sample; end
 
   def about; end
 end

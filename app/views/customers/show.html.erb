@@ -9,18 +9,19 @@
    <%= @customer.last_name %>
 
   </h3>
-  <p class="lead">
-  <%= @customer.email %><br>
-   <%= @customer.residential_address %><br>
-    <%= @customer.phone %>
+  <p class="lead m-2">
+ 
+   <strong><%= @customer.residential_address %></strong><br>
+    <strong><%= @customer.phone %></strong>
   
   </p>
   <hr class="my-4">
  
   <p class="lead">
     
-<%= link_to 'Edit', edit_customer_path(@customer), class:'btn btn-warning' %> 
-<%= link_to 'Back', customers_path, class:'btn btn-primary' %>
+<%= link_to 'Edit Profile', edit_customer_path(@customer), class:'btn btn-warning' %> 
+<%= link_to 'Back', root_path, class:'btn btn-primary' %>
+<%= link_to 'Request For Service', gardeners_path, class:'btn btn-success' %>
 
   </p>
 </div>
