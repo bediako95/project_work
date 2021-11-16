@@ -4,8 +4,7 @@ class UsersAuthentication < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :customers
-  has_many :gardeners
+  # has_many :customers
+  # has_many :gardeners
   validates :email, uniqueness: true
-  
 end

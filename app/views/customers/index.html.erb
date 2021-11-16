@@ -10,6 +10,7 @@
       <th>Last name</th>
       <th>Residential address</th>
       <th>Phone</th>
+      <th>Action</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,6 +23,10 @@
         <td><%= customer.last_name %></td>
         <td><%= customer.residential_address %></td>
         <td><%= customer.phone %></td>
+        <td><%='Not requested service yet'%></td>
+         <%if onclick%>
+        <td><%='Has requested service'%></td>
+        <%end%>
 
         
         <td><%= link_to 'Show', customer , class:'btn btn-warning'%></td>

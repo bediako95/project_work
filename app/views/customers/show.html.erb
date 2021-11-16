@@ -5,14 +5,20 @@
 <strong><%='Customer Information'%></strong>
 </h2> 
   <h3 class="display-4">
+ 
   <%= @customer.first_name %>
    <%= @customer.last_name %>
 
   </h3>
   <p class="lead m-2">
- 
+ <strong><%='Residential Address : '%></strong>
    <strong><%= @customer.residential_address %></strong><br>
-    <strong><%= @customer.phone %></strong>
+   <strong><%='Residential Address : '%></strong>
+    <strong><%= @customer.phone %></strong><br>
+    <strong><%='Customer ID : '%></strong>
+    <strong><%= @customer.client_id %></strong><br>
+    <strong><%='Action : '%></strong>
+    <strong><%= @customer.actions %></strong>
   
   </p>
   <hr class="my-4">

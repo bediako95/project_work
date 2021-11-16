@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_26_162817) do
+ActiveRecord::Schema.define(version: 2021_10_31_220209) do
 
   create_table "clients", charset: "utf8mb4", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 2021_10_26_162817) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "client_id"
+    t.string "actions"
+    t.index ["actions"], name: "index_customers_on_actions"
     t.index ["client_id"], name: "index_customers_on_client_id"
   end
 
