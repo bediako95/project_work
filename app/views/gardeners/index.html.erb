@@ -1,3 +1,4 @@
+
 <p id="notice"><%= notice %></p>
 
 <h1>Gardeners</h1>
@@ -22,16 +23,19 @@
         <td><%= gardener.last_name %></td>
         <td><%= gardener.phone %></td>
         <td><%= gardener.residential_address %></td>
-        <%if customers_url==customers_path%>
-        <td><%= link_to 'Show', gardener, class:'btn btn-warning' %></td>
-        <td><%= link_to 'Edit', edit_gardener_path(gardener), class:'btn btn-success' %></td>
-        <td><%= link_to 'Delete', gardener, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
-<%= link_to 'New Gardener', new_gardener_path %>
-       <%else%>
-       <td></td>
-      <td><%= link_to 'Request for Service', post_sample_path,class:'btn btn-success',data: { confirm: 'Are you sure you want to request for his service?' }%></td>
-      
-      <%end%>
+        <td>
+        <%= form_tag 'Request', onsubmit: "foo(return false);" do %>
+
+<% end %>
+  </td>
+       
+   <td> <%= #button_tag "Request for Service", type: 'button', onclick: "myFunction()", class: 'btn btn-success',data: { confirm: 'Are you sure you want to request for his service?' } %></td>    
+<%# link_to 'Request for Service',post_sample_path() ,class:'btn btn-success',%>
+
+
+
+
+
       </tr>
     <% end %>
   </tbody>
@@ -39,4 +43,9 @@
 
 <br>
 
-<%= link_to 'Back', root_path, class:"btn btn-primary" %>
+<%if users_authentication_signed_in?%>
+<%= link_to 'Back', rails_admin_path, class:"btn btn-primary" %>
+ <%else%>
+ <%= link_to 'Back', root_path, class:"btn btn-primary" %>
+ <%end%>
+

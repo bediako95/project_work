@@ -7,4 +7,5 @@ class UsersAuthentication < ApplicationRecord
   # has_many :customers
   # has_many :gardeners
   validates :email, uniqueness: true
+  validates :email, confirmation: true
 end

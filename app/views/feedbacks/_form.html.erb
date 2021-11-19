@@ -12,22 +12,22 @@
   <% end %>
 
 <div class="field form-group">
-    <%= form.label :Your_name %>
+    <%= form.label :customer_name %>
     <%= form.text_field :customer_name, class:"form-control" %>
   </div>
   <div class="field form-group">
-    <%= form.label :Phone_number %>
+    <%= form.label :phone_number %>
     <%= form.text_field :phone_number, class:"form-control" %>
   </div>
 
   <div class="field form-group">
-    <%= form.label :Name_of_gardener %>
-    <%= form.text_field :name, class:"form-control" %>
+    <%= form.label :name_of_gardener %>
+    <%= form.text_field :gardener_name, class:"form-control" %>
   </div>
 
   <div class="field form-group">
     <%= form.label :rating %>
-    <%=  form.select :rating, [['5','five'],['4','four'],['3','three'],['3','three'],['2','two'],['1','one']], class:"form-control" %>
+    <%=  form.select :rating, [['5'],['4'],['3'],['2'],['1']], class:"form-control" %>
   </div>
   <div class="field form-group">
     <%= form.label :Additional_Comments %>

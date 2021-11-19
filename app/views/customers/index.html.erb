@@ -2,6 +2,7 @@
 
 <h1>Customers</h1>
 
+<div id="customer_action">
 <table class="table table-striped table-bordered table-hover">
   <thead class="thead-dark">
     <tr>
@@ -23,21 +24,26 @@
         <td><%= customer.last_name %></td>
         <td><%= customer.residential_address %></td>
         <td><%= customer.phone %></td>
-        <td><%='Not requested service yet'%></td>
-         <%if onclick%>
+        
+        <td><%='No service requested'%></td>
+        
+         <%if action_name%>
         <td><%='Has requested service'%></td>
+        
         <%end%>
 
-        
+        <% if users_authentication_signed_in?%>
         <td><%= link_to 'Show', customer , class:'btn btn-warning'%></td>
         <td><%= link_to 'Edit', edit_customer_path(customer), class:'btn btn-success' %></td>
         <td><%= link_to 'Delete', customer, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
-     
+     <%else%>
+     <td></td>
+     <%end%>
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'Add New Customer', new_customer_path, class:"btn btn-secondary" %>
