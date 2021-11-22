@@ -24,13 +24,12 @@
         <td><%= customer.last_name %></td>
         <td><%= customer.residential_address %></td>
         <td><%= customer.phone %></td>
+        <td><%=  $req%></td>
         
-        <td><%='No service requested'%></td>
         
-         <%if action_name%>
-        <td><%='Has requested service'%></td>
         
-        <%end%>
+        
+        
 
         <% if users_authentication_signed_in?%>
         <td><%= link_to 'Show', customer , class:'btn btn-warning'%></td>

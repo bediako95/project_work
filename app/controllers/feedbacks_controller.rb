@@ -19,7 +19,7 @@ class FeedbacksController < ApplicationController
 
   # POST /feedbacks or /feedbacks.json
   def create
-    @feedback = Feedback.new(feedback_params)
+    @feedback = Feedback.new
 
     respond_to do |format|
       if @feedback.save

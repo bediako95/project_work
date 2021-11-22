@@ -17,8 +17,9 @@ class CustomersController < ApplicationController
     @customer = Customer.new
   end
 
-
-  
+  def click
+    $req = 'Service requested'
+  end
 
   # GET /customers/1/edit
   def edit; end
@@ -38,7 +39,6 @@ class CustomersController < ApplicationController
     end
   end
 
-  
   # PATCH/PUT /customers/1 or /customers/1.json
   def update
     respond_to do |format|

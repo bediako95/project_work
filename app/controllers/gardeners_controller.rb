@@ -19,6 +19,8 @@ class GardenersController < ApplicationController
   def edit; end
 
   # POST /gardeners or /gardeners.json
+
+  
   def create
     @gardener = Gardener.new(gardener_params)
 

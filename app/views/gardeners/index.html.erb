@@ -6,6 +6,7 @@
 <table class="table table-striped table-bordered table-hover">
   <thead class="thead-dark">
     <tr>
+    <th>ID</th>
       <th>First name</th>
       <th>Last name</th>
       <th>Phone</th>
@@ -19,18 +20,18 @@
   <tbody>
     <% @gardeners.each do |gardener| %>
       <tr>
+      <td><%= gardener.id %></td>
         <td><%= gardener.first_name %></td>
         <td><%= gardener.last_name %></td>
         <td><%= gardener.phone %></td>
         <td><%= gardener.residential_address %></td>
-        <td>
-        <%= form_tag 'Request', onsubmit: "foo(return false);" do %>
+      <td><%= "0" %></td>
+        <td><%= button_to "Request for Service", customers_click_url(current_client), :method => :post , class:"btn btn-success", data: { confirm: `Are you sure you want to request the service of ${gardener.first_name}?` }%></td>
 
-<% end %>
   </td>
        
-   <td> <%= #button_tag "Request for Service", type: 'button', onclick: "myFunction()", class: 'btn btn-success',data: { confirm: 'Are you sure you want to request for his service?' } %></td>    
-<%# link_to 'Request for Service',post_sample_path() ,class:'btn btn-success',%>
+   
+
 
 
 
