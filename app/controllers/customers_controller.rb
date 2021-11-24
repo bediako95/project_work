@@ -18,8 +18,16 @@ class CustomersController < ApplicationController
   end
 
   def click
+    
     $req = 'Service requested'
+    $service = 'His Service has been requested'
+    respond_to do |format|
+      format.html { redirect_to customers_url, notice: 'Customer was successfully deleted.' }
+      format.json { head :no_content }
+    end
   end
+
+
 
   # GET /customers/1/edit
   def edit; end

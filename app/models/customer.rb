@@ -5,4 +5,5 @@ class Customer < ApplicationRecord
   validates :phone, length: { is: 10 }
   validates :first_name, :last_name, :residential_address, length: { minimum: 3 }
   validates :phone, numericality: { only_integer: true }
+  validates :phone, uniqueness: true
 end
