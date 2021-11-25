@@ -52,5 +52,5 @@ development:
 production:
   <<: *default
   database: rails_prod
-  username: project
+  username: redux
   password: <%= ENV['PROJECT_DATABASE_PASSWORD'] %>

@@ -2,7 +2,7 @@ RailsAdmin.config do |config|
   config.authorize_with do
     redirect_to main_app.root_path unless current_users_authentication.admin == true
   rescue ActiveRecord::RecordNotFound
-    render json: 'record not found'
+    render html: 'record not found'
   end
 
   ### Popular gems integration

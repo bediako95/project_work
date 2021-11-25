@@ -18,16 +18,13 @@ class CustomersController < ApplicationController
   end
 
   def click
-    
     $req = 'Service requested'
     $service = 'His Service has been requested'
     respond_to do |format|
-      format.html { redirect_to customers_url, notice: 'Customer was successfully deleted.' }
+      format.html { redirect_to post_sample_path, notice: 'Order placed successfully.' }
       format.json { head :no_content }
     end
   end
-
-
 
   # GET /customers/1/edit
   def edit; end
@@ -78,6 +75,7 @@ class CustomersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def customer_params
-    params.require(:customer).permit(:first_name, :last_name, :email, :residential_address, :phone, :client_id)
+    params.require(:customer).permit(:first_name, :last_name, :email, :residential_address, :phone, :client_id,
+                                     :service)
   end
 end

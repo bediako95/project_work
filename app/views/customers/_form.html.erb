@@ -34,6 +34,10 @@
     <%= form.text_field :phone,class:'form-control' %>
   </div>
    
+   <div class="field form-group">
+    <%= form.label :service_needed %>
+    <%=  form.select :service, [['Prunning plants'],['Planting and seedlings'],['Pest and Disease Control '],['Weeding']], class:"form-control" %>
+  </div>
     
     <div class="field form-group">
     <%= form.number_field :client_id,id: :customer_client_id, class:'form-control', value:current_client.id, type: :hidden %>
